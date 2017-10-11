@@ -43,7 +43,7 @@ var UserComponent = (function () {
 UserComponent = __decorate([
     core_1.Component({
         selector: 'user',
-        template: "\n  \t<h1>Hello {{name}}</h1>\n  \t<p><b>Email:</b> {{email}}</p>\n  \t<p><b>Address:</b> {{address.street}}, {{address.city}}, {{address.state}}</p>\n  \t<div *ngIf=\"show\">\n  \t\t<ul>\n  \t\t\t<li *ngFor=\"let item of items; let i = index\">{{item}}\n  \t\t\t\t<button (click)=\"deleteItem()\">delete</button>\n  \t\t\t</li>\n  \t\t</ul>\n  \t</div>\n  \t<button (click)=\"toggleItems()\">{{toggle}} items</button>\n\n  \t<form (submit)=\"addItem(item.value)\">\n  \t\t<label>Add new item</label>\n  \t\t<input type=\"text\" #item />\n  \t</form>\n  \t",
+        template: "\n    <h1>Hello {{name}}</h1>\n    <p><b>Email:</b> {{email}}</p>\n    <p><b>Address:</b> {{address.street}}, {{address.city}}, {{address.state}}</p>\n    <form (submit)=\"addItem(item.value)\">\n    <label>Add</label>\n    <input type=\"text\" #item />\n    </form>\n    <hr />\n    <div *ngIf=\"show\">\n    <ul>\n    <li *ngFor=\"let item of items; let i = index\">{{item}}\n    <button (click)=\"deleteItem(i)\">delete</button>\n    </li>\n    </ul>\n    </div>\n    <button (click)=\"toggleItems()\">{{toggle}} items</button>\n    <hr />\n    <div>\n    <label>Change Name</label>\n    <input [(ngModel)]=\"name\" placeholder=\"name\">\n    </div>\n    ",
     }),
     __metadata("design:paramtypes", [])
 ], UserComponent);
